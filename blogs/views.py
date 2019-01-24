@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from .models import blog
 
 def bloghome(request):
-    return render(request,'blog.html')
+    articles = blog.objects.all().order_by('date')
+    return render(request,'blog.html',{'articles':articles})
