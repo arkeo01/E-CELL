@@ -1,6 +1,5 @@
-from django.shortcuts import render
-from .models import blog
+from django.views.generic import TemplateView
 
-def bloghome(request):
-    articles = blog.objects.all().order_by('date')
-    return render(request,'blog.html',{'articles':articles})
+
+class BlogHome(TemplateView):
+    template_name = 'blog.html'
