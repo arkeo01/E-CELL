@@ -1,5 +1,6 @@
 from __future__ import absolute_import
 from django.views.generic.base import TemplateView
+from django.views.generic import DetailView
 from blogs.models import blog
 
 
@@ -10,3 +11,9 @@ class BlogHome(TemplateView):
         context = super(BlogHome, self).get_context_data(**kwargs)
         context['articles'] = blog.objects.all()
         return context
+
+
+class Blogdetails(DetailView):
+    template_name = 'details.html'
+    model = blog
+

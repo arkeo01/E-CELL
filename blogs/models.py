@@ -9,3 +9,6 @@ class blog(models.Model):
 
     def __str__(self):
         return self.title
+
+    def snippet(self):
+        return self.body[:100]+"..."
