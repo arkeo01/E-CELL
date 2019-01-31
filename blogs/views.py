@@ -16,4 +16,3 @@ class BlogHome(TemplateView):
 class Blogdetails(DetailView):
     template_name = 'details.html'
     model = blog
-
